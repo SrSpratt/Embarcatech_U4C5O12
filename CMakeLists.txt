@@ -1,4 +1,4 @@
-# Ajusta caminhos e versões
+# == DO NOT EDIT THE FOLLOWING LINES for the Raspberry Pi Pico VS Code Extension to work ==
 if(WIN32)
     set(USERHOME $ENV{USERPROFILE})
 else()
@@ -8,9 +8,10 @@ set(sdkVersion 2.1.0)
 set(toolchainVersion 13_3_Rel1)
 set(picotoolVersion 2.1.0)
 set(picoVscode ${USERHOME}/.pico-sdk/cmake/pico-vscode.cmake)
-if(EXISTS ${picoVscode})
+if (EXISTS ${picoVscode})
     include(${picoVscode})
 endif()
+# ====================================================================================
 
 set(PICO_BOARD pico CACHE STRING "Board type")
 
@@ -42,8 +43,6 @@ add_subdirectory(src)
 
 #Cria os arquivos: map, bin, hex e uf2
 pico_add_extra_outputs(${PROJECT_NAME})
-
-pico_generate_pio_header(${PROJECT_NAME} ${CMAKE_SOURCE_DIR}/src/PIO_U4C4.pio)
 
 target_link_libraries(${PROJECT_NAME}
     pico_stdlib
