@@ -10,6 +10,13 @@
 #define YELLOWLIGHT 12   // Pino do LED amarelo 
 #define GREENLIGHT 13    // Pino do LED verde 
 
+typedef struct repeating_timer RepeatingTimer;
+
+extern RepeatingTimer repeatingTimer;
+void FireInOrder(Pin* pins, uint8_t size, uint32_t duration, uint8_t first);
+
+bool HandleChangeLED(RepeatingTimer*);
+
 /**
  * @brief Testa os LEDs invertendo seu estado por um curto período de tempo.
  *
@@ -18,5 +25,7 @@
  * @param duration Duração do teste em milissegundos.
  */
 void TestLEDs(Pin* pins, uint8_t size, uint32_t duration);
+
+int64_t HandleToggle(alarm_id_t id, void *user_data);
 
 #endif /* LIGHTS_U4C5_H */
