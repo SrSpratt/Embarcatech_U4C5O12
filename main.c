@@ -6,7 +6,7 @@
 
 int main(){
 
-    Pins pins[LIGHTS] = {
+    Pin pins[LIGHTS] = {
         {
             .Pin = REDLIGHT,
             .Input = false
@@ -16,7 +16,7 @@ int main(){
             .Input = false
         },
         {
-            .Pin = YELLOWLIGHT,
+            .Pin = GREENLIGHT,
             .Input = false
         },
 
@@ -24,5 +24,5 @@ int main(){
 
     Configuration(pins, LIGHTS);
 
-    printf("Olá");
+    TestLEDs(pins, LIGHTS, 500);
 }

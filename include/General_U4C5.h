@@ -10,15 +10,8 @@
 typedef struct PinOut {
     uint8_t Pin;  // Número do pino 
     bool Input;   // Entrada? -> entrada se for verdadeiro e saída se não for.
-} Pins;
-
-/**
- * @brief Representa o estado de um pino.
- */
-typedef struct PinState {
-    uint8_t Pin;   // Número do pino 
-    bool State;    // Estado atual do pino (alto ou baixo) 
-} PinState;
+    uint8_t (*GetState)(struct PinOut self);
+} Pin;
 
 /**
  * @brief Armazena o contexto do temporizador.
@@ -38,7 +31,7 @@ extern Context context;
  * @param pins Ponteiro para um vetor de `Pins`, com as configurações dos pinos.
  * @param size Quantidade de pinos.
  */
-void Configuration(Pins* pins, uint8_t size);
+void Configuration(Pin* pins, uint8_t size);
 
 /**
  * @brief Configura um pino como entrada.

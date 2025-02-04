@@ -17,6 +17,6 @@
  * @param size Quantidade de pinos.
  * @param duration Duração do teste em milissegundos.
  */
-void TestLEDs(PinState* pins, uint8_t size, uint8_t duration);
+void TestLEDs(Pin* pins, uint8_t size, uint32_t duration);
 
 #endif /* LIGHTS_U4C5_H */
