@@ -1,6 +1,6 @@
 # Embarcatech_U4C5O12
 # Embarcatech_U4C5O12  
-### TAREFA 1 - U4C5O12 - Unidade 4 - Capítulo 5
+### TAREFA 1 PARTE 1 SEMÁFORO - U4C5O12 - Unidade 4 - Capítulo 5
 #### Autor:
 * Roberto Vítor Lima Gomes Rodrigues
 
