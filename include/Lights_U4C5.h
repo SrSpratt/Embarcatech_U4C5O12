@@ -6,9 +6,9 @@
 /**
  * @brief Definições dos pinos dos LEDs de sinalização.
  */
-#define REDLIGHT 11      // Pino do LED vermelho 
+#define REDLIGHT 13      // Pino do LED vermelho 
 #define YELLOWLIGHT 12   // Pino do LED amarelo 
-#define GREENLIGHT 13    // Pino do LED verde 
+#define GREENLIGHT 11    // Pino do LED verde 
 
 /**
  * @brief Renomeia `struct repeating_timer` para `RepeatingTimer`.

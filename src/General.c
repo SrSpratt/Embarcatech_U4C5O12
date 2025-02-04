@@ -5,6 +5,8 @@ Context context;
 void Configuration(Pin* pins, uint8_t size){
     stdio_init_all();
 
+    //stdio_usb_init();
+
     for (uint8_t i = 0; i < size; i++){
         if (pins[i].Input)
             SetInput(pins[i].Pin);
