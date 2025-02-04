@@ -10,17 +10,17 @@
  * @brief Representa um pino e sua configuração de entrada ou saída.
  */
 typedef struct PinOut {
-    uint8_t Pin;  // Número do pino 
-    bool Input;   // Entrada? -> entrada se for verdadeiro e saída se não for.
+    uint8_t Pin;  // Número do pino
+    bool Input;   // Define se o pino é de entrada (true) ou saída (false)
 } Pin;
 
 /**
  * @brief Armazena o contexto do temporizador.
  */
 typedef struct TimerContext {
-    uint8_t TurnedOn; // Vai ser usado para armazenar o pino ligado na chamada do temporizador 
-    uint8_t VectorSize;
-    Pin Pins[3];
+    uint8_t TurnedOn;   // Último pino que foi ligado
+    uint8_t VectorSize; // Número total de pinos armazenados
+    Pin Pins[3];        // Vetor de pinos armazenados no contexto
 } Context;
 
 /**
@@ -29,33 +29,39 @@ typedef struct TimerContext {
 extern Context context;
 
 /**
- * @brief Configura pinos como entrada ou saída.
+ * @brief Configura o monitor serial e cada pino no vetor enviado como entrada ou saída.
  *
- * @param pins Ponteiro para um vetor de `Pins`, com as configurações dos pinos.
- * @param size Quantidade de pinos.
+ * @param Pin* Ponteiro para um vetor de pinos.
+ * @param uint8_t Quantidade de pinos no vetor.
  */
-void Configuration(Pin* pins, uint8_t size);
+void Configuration(Pin*, uint8_t);
 
 /**
  * @brief Configura um pino como entrada.
  *
- * @param pin Número do pino.
+ * @param uint8_t Número do pino.
  */
-void SetInput(uint8_t pin);
+void SetInput(uint8_t);
 
 /**
  * @brief Configura um pino como saída.
  *
- * @param pin Número do pino.
+ * @param uint8_t Número do pino.
  */
-void SetOutput(uint8_t pin);
-
-void PrintPin(Pin pin);
-void PrintContext(Context context);
+void SetOutput(uint8_t);
 
 /**
- * @brief Callback do temporizador (ainda vou implementar).
+ * @brief Exibe informações de um pino.
+ *
+ * @param Pin Estrutura contendo as informações do pino.
  */
-void TimerCallback();
+void PrintPin(Pin);
+
+/**
+ * @brief Exibe o contexto atual do temporizador.
+ *
+ * @param Context Estrutura contendo o contexto do temporizador.
+ */
+void PrintContext(Context);
 
 #endif 

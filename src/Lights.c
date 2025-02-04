@@ -8,11 +8,11 @@ void FireInOrder(Pin* pins, uint8_t size, uint32_t duration, uint8_t first){
     context.TurnedOn = pins[first].Pin;
     
     add_repeating_timer_ms(duration, HandleChangeLED, NULL, &repeatingTimer);
-    //add_alarm_in_ms(duration, HandleChangeLED, NULL, false);
+
 }
 
 bool HandleChangeLED(RepeatingTimer *t){
-    //printf("context turned on: %d\n", context.TurnedOn);
+
     if(context.TurnedOn == REDLIGHT){
         gpio_put(REDLIGHT, 0);
         gpio_put(GREENLIGHT, 0);
@@ -37,17 +37,13 @@ bool HandleChangeLED(RepeatingTimer *t){
 void TestLEDs(Pin* pins, uint8_t size, uint32_t duration){
     for(uint8_t i = 0; i < size; i++){
         gpio_put(pins[i].Pin, !gpio_get(pins[i].Pin));
-        //PrintPin(pins[i]);
         context.Pins[i] = pins[i];
     }
 
-    //sleep_ms(duration);
-    context.VectorSize = size;
-    //PrintContext(context);
-    add_alarm_in_ms(duration, HandleToggle, NULL, false);
 
-    // for(uint8_t i = 0; i < size; i++)
-    //     gpio_put(pins[i].Pin, !gpio_get(pins[i].Pin));
+    context.VectorSize = size;
+
+    add_alarm_in_ms(duration, HandleToggle, NULL, false);
 }
 
 int64_t HandleToggle(alarm_id_t id, void *user_data){
