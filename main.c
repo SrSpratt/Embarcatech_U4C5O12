@@ -26,13 +26,6 @@ int main(){
     //Função que recebe um vetor da estrutura Pin e configura cada pino de acordo com o Input informado, configura também o monitor serial
     Configuration(pins, LIGHTS);
     
-    // if (stdio_usb_connected())
-    //     gpio_put(REDLIGHT, 1);
-    // sleep_ms(1000);
-    // gpio_put(REDLIGHT, 0);
-    // sleep_ms(1000);
-
-    //TestLEDs(pins, LIGHTS, 500); 
 
     //Função com o contador que liga cada LED na ordem com um intervalo de 3s
     FireInOrder(pins, LIGHTS, 3000, 0);

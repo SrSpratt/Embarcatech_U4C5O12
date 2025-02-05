@@ -1,11 +1,11 @@
-# Embarcatech_U4C5O12
-# Embarcatech_U4C5O12  
-### TAREFA 1 PARTE 1 SEMÁFORO - U4C5O12 - Unidade 4 - Capítulo 5
+# Embarcatech_U4C5O12-1
+## Unidade 4 - Capítulo 5  
+### TAREFA 2 PARTE 1 SEMÁFORO - U4C5O12 
 #### Autor:
 * Roberto Vítor Lima Gomes Rodrigues
 
 #### Vídeo de funcionamento
-* 
+* https://youtu.be/LA3bWfm-UcA
 
 #### Instruções de compilação
 Certifique-se de que você tem o ambiente configurado conforme abaixo:
