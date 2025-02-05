@@ -5,9 +5,9 @@
 * Roberto Vítor Lima Gomes Rodrigues
 
 #### Vídeo de funcionamento
-No simulador wokwi:
+##### No simulador wokwi:
 * https://youtu.be/LA3bWfm-UcA
-Na placa BitDogLab:
+##### Na placa BitDogLab:
 * https://youtu.be/aFynXeDv1js
     * Obs.: como é explicado no vídeo, a implementação na placa é um pouco diferente do wokwi, sendo necessários dois leds acesos no segundo estágio do semáforo para ligar a cor amarela. Executei de duas formas, primeiro com o RGB azul no lugar do amarelo, e depois fazendo a modificação para que a luz fique amarela no segundo estágio do semáforo. O código deste repositório, porém, está de acordo com o Wokwi.
     * Obs. II: as saídas em série são ilustradas através de uma conexão que abri com node.js, como mostrado no vídeo.
