@@ -10,6 +10,7 @@ No simulador wokwi:
 Na placa BitDogLab:
 * https://youtu.be/aFynXeDv1js
     * Obs.: como é explicado no vídeo, a implementação na placa é um pouco diferente do wokwi, sendo necessários dois leds acesos no segundo estágio do semáforo para ligar a cor amarela. Executei de duas formas, primeiro com o RGB azul no lugar do amarelo, e depois fazendo a modificação para que a luz fique amarela no segundo estágio do semáforo. O código deste repositório, porém, está de acordo com o Wokwi.
+    * Obs. II: as saídas em série são ilustradas através de uma conexão que abri com node.js, como mostrado no vídeo.
 
 #### Instruções de compilação
 Certifique-se de que você tem o ambiente configurado conforme abaixo:
@@ -27,4 +28,4 @@ Ao executar o programa, os LEDs serão acesos na seguinte ordem:
 * Por fim, será aceso o LED verde, também por 3 segundos
 A função de timer chamada para realizar essa sequência garante que isso ficará rodando ad infinitum nessa ordem (lógica implementada no callback da função).
 
-* Obs.: documentei todo o código com doxygen, então ao passar o cursos do mouse em cima de qualquer uma das funções, será mostrada uma pequena descrição da implementação
+* Obs.: documentei todo o código com doxygen, então ao passar o cursos do mouse em cima de qualquer uma das funções, será mostrada uma pequena descrição da implementação.
