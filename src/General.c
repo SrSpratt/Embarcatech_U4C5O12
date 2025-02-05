@@ -26,14 +26,14 @@ void SetOutput(uint8_t pin){
     gpio_set_dir(pin, GPIO_OUT);
     gpio_put(pin, 0);
 }
-//imprime o Pin como debugger
+//imprime o Pin para depuração
 void PrintPin(Pin pin){
     printf("Pin ====\n");
     printf("Pin: %d\n", pin.Pin);
     printf("Input?: %d\n", pin.Input);
     printf("\n");
 }
-//Imprime o provedor global como debugger
+//Imprime o provedor global para depuração
 void PrintContext(Context context){
     printf("Context ====\n");
     printf("Vector: %d\n", context.VectorSize);

@@ -10,7 +10,7 @@ void FireInOrder(Pin* pins, uint8_t size, uint32_t duration, uint8_t first){
     //Armazena o primeiro pino no provedor global, como memória de estado
     context.TurnedOn = pins[first].Pin;
     
-    //Adiciona o contador por duration milissegundos
+    //Adiciona o contador por duration milissegundos com a função de callback HandleChangeLED
     add_repeating_timer_ms(duration, HandleChangeLED, NULL, &repeatingTimer);
 
 }
@@ -39,7 +39,7 @@ bool HandleChangeLED(RepeatingTimer *t){
     return true;
 }
 
-
+//Função de teste dos LEDs
 void TestLEDs(Pin* pins, uint8_t size, uint32_t duration){
     for(uint8_t i = 0; i < size; i++){
         gpio_put(pins[i].Pin, !gpio_get(pins[i].Pin));
@@ -51,7 +51,7 @@ void TestLEDs(Pin* pins, uint8_t size, uint32_t duration){
 
     add_alarm_in_ms(duration, HandleToggle, NULL, false);
 }
-
+// Callback do teste
 int64_t HandleToggle(alarm_id_t id, void *user_data){
     PrintContext(context);
     for(uint8_t i = 0; i < context.VectorSize; i++){
