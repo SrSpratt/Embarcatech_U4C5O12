@@ -30,6 +30,7 @@ bool HandleChangeLED(RepeatingTimer *t){
         gpio_put(GREENLIGHT, 1);   
         context.TurnedOn = GREENLIGHT;
     } else {
+        // Retoma o estágio inicial (vermelho)
         gpio_put(YELLOWLIGHT, 0);
         gpio_put(GREENLIGHT, 0);
         gpio_put(REDLIGHT, 1);
